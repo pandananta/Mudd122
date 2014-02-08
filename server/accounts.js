@@ -16,6 +16,7 @@
         if (result.error)
             throw result.error;
 
+        //Include these user fields in database
         profile = _.pick(result.data,
             "name",
             "given_name",
@@ -29,6 +30,7 @@
         // console.log(profile);
         user.profile = profile;
 
+        //Sends this user info to the database
         return user;
     });
 }());
